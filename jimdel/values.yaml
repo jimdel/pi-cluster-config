@@ -15,3 +15,7 @@ service:
 # ingress.yaml
 ingress:
   host: www.jimdel.local
+
+# certmanager
+certmanager:
+  contactEmail: "jim@jim.com" #TODO: load from env
