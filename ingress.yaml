@@ -9,10 +9,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - www.example.com
+    - www.jimdel.local
     secretName: webapp-tls
   rules:
-  - host: www.example.com
+  - host: www.jimdel.local
     http:
       paths:
       - path: /
