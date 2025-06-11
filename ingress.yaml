@@ -19,6 +19,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: webapp-service
+            name: jimdel-go-portfolio-service
             port:
               number: 80
