@@ -3,9 +3,9 @@ kind: Ingress
 metadata:
   name: webapp-ingress
   annotations:
-    traefik.ingress.kubernetes.io/router.entrypoints: web,websecure
-    traefik.ingress.kubernetes.io/router.tls: "true"
-    cert-manager.io/cluster-issuer: "letsencrypt-prod"  # if using cert-manager
+    traefik.ingress.kubernetes.io/router.entrypoints: web
+    # traefik.ingress.kubernetes.io/router.tls: "true"
+    # cert-manager.io/cluster-issuer: "letsencrypt-prod"  # if using cert-manager
 spec:
   tls:
   - hosts:
