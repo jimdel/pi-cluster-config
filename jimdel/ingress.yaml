@@ -6,13 +6,13 @@ metadata:
     traefik.ingress.kubernetes.io/router.entrypoints: web
 spec:
   rules:
-  - host: www.jimdel.local
+  - host: www.jimdel.local #TODO: move to Helm
     http:
       paths:
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: jimdel-go-portfolio-service
+            name: jimdel-go-portfolio-service #TODO: move to Helm
             port:
               number: 80

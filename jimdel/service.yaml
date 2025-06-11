@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: jimdel-go-portfolio-service #TODO: move to Helm
+spec:
+  selector:
+    app: jimdel-go-portfolio #TODO: move to Helm
+  ports:
+  - port: 80
+    targetPort: 8080  #TODO: move to Helm
+  type: ClusterIP
