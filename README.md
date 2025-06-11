@@ -1,3 +1,9 @@
+## To Do:
+- [ ] Add more documentation
+- [ ] Combine with Anisble repo for Pi setup
+
+___
+
 # Pi Cluster Config
 
 This repository contains the configuration files for a k3s cluster running on Raspberry Pis.
@@ -15,7 +21,3 @@ K3s clusters come bundled with ServiceLB but this is not suitable for production
 | **Shared IPs (L2 mode)** | ❌ No                        | ✅ Yes (one IP can float across nodes) |
 | **HA Load Balancing**    | ⚠️ Limited (1 IP → 1 Node)  | ✅ True Load Balancer behavior         |
 | **Production Ready**     | ⚠️ Basic use/dev only       | ✅ Widely used in production           |
-
-## To Do:
-- [ ] Add more documentation
-- [ ] Combine with Anisble repo for Pi setup
