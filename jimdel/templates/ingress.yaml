@@ -1,18 +1,18 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: webapp-ingress
+  name: {{ .Values.applicationName }}-ingress
   annotations:
     traefik.ingress.kubernetes.io/router.entrypoints: web
 spec:
   rules:
-  - host: www.jimdel.local #TODO: move to Helm
+  - host: {{ .Values.ingress.host }}
     http:
       paths:
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: jimdel-go-portfolio-service #TODO: move to Helm
+            name: {{ .Values.applicationName }}-service
             port:
               number: 80

@@ -1,0 +1,17 @@
+# globals
+applicationName: jimdel
+
+# deployment.yaml 
+deployment:
+  replicaCount: 3
+  containerPort: 3000
+  dockerImage: delayj/jimdel
+  dockerTag: latest
+
+# service.yaml
+service:
+  targetPort: 8080
+
+# ingress.yaml
+ingress:
+  host: www.jimdel.local
