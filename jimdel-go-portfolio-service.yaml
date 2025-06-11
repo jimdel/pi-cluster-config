@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: webapp-service
+  name: jimdel-go-portfolio-service
 spec:
   selector:
     app: webapp
