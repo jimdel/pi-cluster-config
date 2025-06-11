@@ -44,6 +44,7 @@ To use MetalLB, create a service with `type: LoadBalancer`. MetalLB will automat
 
 Example:
 ```yaml
+# example-service.yaml
 apiVersion: v1
 kind: Service
 metadata:
@@ -55,6 +56,18 @@ spec:
   - port: 80
     targetPort: 8080
   type: LoadBalancer
+```
+
+1. Apply the service configuration:
+
+```bash
+kubectl apply -f example-service.yaml
+```
+2. Configure Traefik (default for k3s) to use the `LoadBalancer` service:
+
+```bash
+kubectl -n kube-system patch svc traefik \
+  -p '{"spec": {"type": "LoadBalancer"}}'
 ```
 
 ## Troubleshooting
