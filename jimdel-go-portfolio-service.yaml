@@ -7,5 +7,5 @@ spec:
     app: jimdel-go-portfolio
   ports:
   - port: 80
-    targetPort: 3000  # Your app's port
+    targetPort: 8080  # Your app's port
   type: ClusterIP
