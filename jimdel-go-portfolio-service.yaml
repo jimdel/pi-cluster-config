@@ -4,7 +4,7 @@ metadata:
   name: jimdel-go-portfolio-service
 spec:
   selector:
-    app: webapp
+    app: jimdel-go-portfolio
   ports:
   - port: 80
     targetPort: 8080  # Your app's port
