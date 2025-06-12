@@ -14,7 +14,7 @@ service:
 
 # ingress.yaml
 ingress:
-  host: www.jimdel.local
+  host: jimdel.dev
 
 # certmanager
 certmanager:
