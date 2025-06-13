@@ -21,6 +21,7 @@ spec:
   install:
     createNamespace: true
   upgrade:
+    force: true  # Force Helm upgrades even when chart or values haven't changed
     remediation:
       retries: 3
   values:
@@ -28,3 +29,5 @@ spec:
       repository: delayj/jimdel
       tag: "main-19918b7e92f43866ecbc5ce8d68aa38e38ffca1f" # This will be updated by Flux based on ImagePolicy
       pullPolicy: Always
+    podAnnotations:
+      rollme: {{ now | quote }}  # This annotation changes each time, forcing a restart
