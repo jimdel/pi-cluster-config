@@ -7,5 +7,5 @@ spec:
   imageRepositoryRef:
     name: jimdel
   policy:
-    regex:
-      pattern: '^main-[a-f0-9]+$' # Match tags like 'main-<commit-sha>'
+    alphabetical:
+      order: asc  # This will select 'latest' if it exists

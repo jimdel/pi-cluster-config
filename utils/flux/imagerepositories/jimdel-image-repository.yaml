@@ -4,5 +4,5 @@ metadata:
   name: jimdel
   namespace: flux-system
 spec:
-  image: docker.io/delayj/jimdel
+  image: delayj/jimdel
   interval: 1m
