@@ -7,16 +7,15 @@ spec:
   interval: 5m
   chart:
     spec:
-      chart: ./apps/jimdel # Path to your existing Helm chart
+
+      chart: ./helm # Path to your existing Helm chart
       version: '*'
       sourceRef:
         kind: GitRepository
         name: jimdel-source
         namespace: flux-system
       interval: 1m
-  targetNamespace: jimdel
-  install:
-    createNamespace: true
+  targetNamespace: Default
   upgrade:
     remediation:
       retries: 3
