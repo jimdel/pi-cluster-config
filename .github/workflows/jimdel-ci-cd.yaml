@@ -16,7 +16,7 @@ on:
 
 env:
   REGISTRY: docker.io
-  IMAGE_NAME: ${{ env.DOCKER_REGISTRY_USER }}/jimdel  # Replace with your Docker Hub username
+  IMAGE_NAME: ${{ secrets.DOCKERHUB_USERNAME }}/jimdel  # Replace with your Docker Hub username
 
 jobs:
   deploy:
