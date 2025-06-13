@@ -1,0 +1,24 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImageUpdateAutomation
+metadata:
+  name: jimdel
+  namespace: flux-system
+spec:
+  interval: 1m
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  git:
+    checkout:
+      ref:
+        branch: main
+    commit:
+      author:
+        email: fluxcd@users.noreply.github.com
+        name: Flux CD Bot
+      messageTemplate: 'Update jimdel image to {{.NewTag}}'
+    push:
+      branch: main
+  update:
+    path: ./utils/flux/releases
+    strategy: Setters

@@ -3,3 +3,7 @@ kind: Kustomization
 resources:
 - sources
 - releases
+- namespaces
+- imagerepositories
+- imagepolicies
+- imageupdateautomations
