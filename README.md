@@ -21,6 +21,3 @@ K3s clusters come bundled with ServiceLB but this is not suitable for production
 | **Shared IPs (L2 mode)** | ❌ No                        | ✅ Yes (one IP can float across nodes) |
 | **HA Load Balancing**    | ⚠️ Limited (1 IP → 1 Node)  | ✅ True Load Balancer behavior         |
 | **Production Ready**     | ⚠️ Basic use/dev only       | ✅ Widely used in production           |
-
-
- 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
