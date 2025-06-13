@@ -7,7 +7,6 @@ spec:
   interval: 5m
   chart:
     spec:
-
       chart: ./helm # Path to your existing Helm chart
       version: '*'
       sourceRef:
@@ -22,7 +21,7 @@ spec:
   values:
     # Override any values from your existing values.yaml here
     image:
-      tag: "main-1fd08c46dbc28eb43e2281ae87a3e03ae2929430" # This will be updated by GitHub Actions
+      tag: "main-e1d1f5a07b8799e7c6ab948ff3acb29ddbe64208" # This will be updated by GitHub Actions
       # Add any other value overrides specific to your environment
 
       repository: docker.io/delayj/jimdel
