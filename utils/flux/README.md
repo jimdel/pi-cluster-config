@@ -1,6 +1,12 @@
 # Setup Flux
 
-## Step 1: Install Flux CLI
+This directory contains scripts and configurations to set up Flux, a tool for managing Kubernetes clusters.
+
+`flux-system` contains the base configurations for Flux.
+
+## Setup Guide:
+
+### Step 1: Install Flux CLI
 1. Download and install the Flux CLI:
    ```bash
    curl -s https://fluxcd.io/install.sh | sudo bash
@@ -9,7 +15,7 @@
    ```bash  
     flux --version
     ```
-## Step 2: Bootstrap Flux in Your Cluster
+### Step 2: Bootstrap Flux in Your Cluster
 1. Execute the bootstrap command to set up Flux in your cluster:
    ```bash
     export GITHUB_USER=<your-github-username>

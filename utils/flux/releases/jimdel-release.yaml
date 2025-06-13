@@ -1,0 +1,27 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: jimdel
+  namespace: flux-system
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: ./apps/jimdel  # Path to your existing Helm chart
+      version: '*'
+      sourceRef:
+        kind: GitRepository
+        name: jimdel-source
+        namespace: flux-system
+      interval: 1m
+  targetNamespace: jimdel
+  install:
+    createNamespace: true
+  upgrade:
+    remediation:
+      retries: 3
+  values:
+    # Override any values from your existing values.yaml here
+    image:
+      tag: "latest"  # This will be updated by GitHub Actions
+    # Add any other value overrides specific to your environment
