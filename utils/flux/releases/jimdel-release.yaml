@@ -4,7 +4,8 @@ metadata:
   name: jimdel
   namespace: flux-system
   annotations:
-    fluxcd.io/imagepolicy: flux-system/jimdel
+    fluxcd.io/image-policy: flux-system/jimdel
+    fluxcd.io/tag.image: flux-system/jimdel
 spec:
   interval: 10m
   chart:
@@ -23,8 +24,7 @@ spec:
     remediation:
       retries: 3
   values:
-    # Override any values from your existing values.yaml here
     image:
-      tag: "main-19918b7e92f43866ecbc5ce8d68aa38e38ffca1f" # This will be updated by Flux based on ImagePolicy
       repository: docker.io/delayj/jimdel
+      tag: "main-19918b7e92f43866ecbc5ce8d68aa38e38ffca1f" # This will be updated by Flux based on ImagePolicy
       pullPolicy: Always
