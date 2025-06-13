@@ -4,7 +4,7 @@ metadata:
   name: jimdel
   namespace: flux-system
 spec:
-  interval: 5m
+  interval: 10m
   chart:
     spec:
       chart: .helm # Path to your existing Helm chart
