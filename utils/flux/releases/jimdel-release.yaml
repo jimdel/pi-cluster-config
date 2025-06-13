@@ -7,7 +7,7 @@ spec:
   interval: 5m
   chart:
     spec:
-      chart: ./.helm # Path to your existing Helm chart
+      chart: .helm # Path to your existing Helm chart
       version: '*'
       sourceRef:
         kind: GitRepository
