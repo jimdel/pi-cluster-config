@@ -23,7 +23,7 @@ spec:
   values:
     # Override any values from your existing values.yaml here
     image:
-      tag: "main-46269e4ee8352fcb0f6fc1845c14fed44867f832" # This will be updated by GitHub Actions
+      tag: "main-1fd08c46dbc28eb43e2281ae87a3e03ae2929430" # This will be updated by GitHub Actions
       # Add any other value overrides specific to your environment
 
       repository: docker.io/delayj/jimdel
