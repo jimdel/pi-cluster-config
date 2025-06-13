@@ -7,4 +7,4 @@ spec:
   interval: 1m
   ref:
     branch: main
-  url: https://github.com/jimdel/pi-cluster-config
+  url: https://github.com/jimdel/jimdel-go-portfolio.git
