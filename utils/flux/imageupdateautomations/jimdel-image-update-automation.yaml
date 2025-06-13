@@ -20,5 +20,5 @@ spec:
     push:
       branch: main
   update:
-    path: ./utils/flux/releases
+    path: .helm
     strategy: Setters

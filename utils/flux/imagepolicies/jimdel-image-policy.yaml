@@ -7,5 +7,5 @@ spec:
   imageRepositoryRef:
     name: jimdel
   policy:
-    semver:
-      range: '>=0.0.0'
+    regex:
+      pattern: '^main-[a-f0-9]+$' # Match tags like 'main-<commit-sha>'
