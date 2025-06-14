@@ -1,0 +1,25 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: jimdel
+  namespace: jimdel
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: ./.helm
+      sourceRef:
+        kind: GitRepository
+        name: jimdel-charts
+        namespace: flux-system
+  values:
+    image:
+      repository: delayj/jimdel
+      tag: 1.0.0  # {"$imagepolicy": "flux-system:jimdel:tag"}
+    
+    ingress:
+      enabled: true
+      annotations:
+        traefik.ingress.kubernetes.io/router.entrypoints: websecure
+        traefik.ingress.kubernetes.io/router.tls: "true"
+        cert-manager.io/cluster-issuer: letsencrypt-prod

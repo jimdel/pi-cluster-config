@@ -1,0 +1,51 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageRepository
+metadata:
+  name: jimdel 
+  namespace: flux-system
+spec:
+  image: delayj/jimdel # your image name
+  interval: 1m
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImagePolicy
+metadata:
+  name: jimdel
+  namespace: flux-system
+spec:
+  imageRepositoryRef:
+    name: jimdel
+  policy:
+    semver:
+      range: '>=1.0.0'
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageUpdateAutomation
+metadata:
+  name: jimdel
+  namespace: flux-system
+spec:
+  interval: 1m
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  git:
+    checkout:
+      ref:
+        branch: main
+    commit:
+      author:
+        email: fluxcdbot@users.noreply.github.com
+        name: fluxcdbot
+      messageTemplate: |
+        Automated image update for jimdel
+        
+        Images:
+        {{ range .Updated.Images -}}
+        - {{.}}
+        {{ end -}}
+    push:
+      branch: main
+  update:
+    path: "./flux"
+    strategy: Setters

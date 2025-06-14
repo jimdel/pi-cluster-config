@@ -1,0 +1,19 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: GitRepository
+metadata:
+  name: jimdel-charts # name of your helm chart repo
+  namespace: flux-system
+spec:
+  interval: 1m
+  ref:
+    branch: main
+  url: https://github.com/jimdel/jimdel-go-portfolio # path to your helm chart repo
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: jetstack
+  namespace: flux-system
+spec:
+  interval: 1m
+  url: https://charts.jetstack.io
