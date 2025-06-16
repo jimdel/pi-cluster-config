@@ -16,9 +16,10 @@ spec:
   imageRepositoryRef:
     name: jimdel
   policy:
-    # Update pattern to match the actual tag format in your repository
-    regex:
-      pattern: '^main-[a-f0-9]+' # This will match both short and long SHA formats
+    # Using semver policy to correctly sort version numbers
+    semver:
+      range: '>=0.0.0'
+      pattern: '^[a-f0-9]+-v(?P<version>.*)$'
 ---
 apiVersion: image.toolkit.fluxcd.io/v1beta2
 kind: ImageUpdateAutomation
