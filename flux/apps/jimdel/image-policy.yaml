@@ -3,9 +3,14 @@ kind: ImageRepository
 metadata:
   name: jimdel 
   namespace: flux-system
+  annotations:
+    # Add a reconcile annotation to force a refresh
+    reconcile.fluxcd.io/requestedAt: '{{ now | date "20060102150405" }}'
 spec:
-  image: delayj/jimdel # your image name
+  image: delayj/jimdel
   interval: 1m
+  # Explicitly disable the signature filtering that might block semver tags
+  exclusionList: []
 ---
 apiVersion: image.toolkit.fluxcd.io/v1beta2
 kind: ImagePolicy
@@ -17,7 +22,7 @@ spec:
     name: jimdel
   policy:
     semver:
-      range: ">=0.0.0"
+      range: '>=0.0.0'
 ---
 apiVersion: image.toolkit.fluxcd.io/v1beta2
 kind: ImageUpdateAutomation
