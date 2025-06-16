@@ -5,7 +5,7 @@ metadata:
   namespace: flux-system
   annotations:
     # Add a reconcile annotation to force a refresh
-    reconcile.fluxcd.io/requestedAt: '{{ now | date "20060102150405" }}'
+    reconcile.fluxcd.io/requestedAt: "1750042500"
 spec:
   image: delayj/jimdel
   interval: 1m
