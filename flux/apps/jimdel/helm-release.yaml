@@ -7,7 +7,7 @@ spec:
   interval: 5m
   chart:
     spec:
-      chart: ./.helm
+      chart: .helm
       sourceRef:
         kind: GitRepository
         name: jimdel-charts
