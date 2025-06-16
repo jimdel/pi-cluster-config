@@ -18,8 +18,6 @@ spec:
   policy:
     semver:
       range: ">=0.0.0"
-      flavor: regex
-      regex: "^[a-f0-9]+-v(?P<version>.*)$"
 ---
 apiVersion: image.toolkit.fluxcd.io/v1beta2
 kind: ImageUpdateAutomation
