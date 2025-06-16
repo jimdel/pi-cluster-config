@@ -16,8 +16,8 @@ spec:
   imageRepositoryRef:
     name: jimdel
   policy:
-    pattern:
-      regex: ^[a-f0-9]+-(?P<version>.*)$
+    alpha:
+      pattern: ^[a-f0-9]+-(?P<version>.*)$
 ---
 apiVersion: image.toolkit.fluxcd.io/v1beta2
 kind: ImageUpdateAutomation
