@@ -16,8 +16,9 @@ spec:
   imageRepositoryRef:
     name: jimdel
   policy:
-    semver:
-      range: '>=1.0.0'
+    # Change from semver to regex to match SHA-based tags
+    regex:
+      pattern: '^main-[a-f0-9]+$'
 ---
 apiVersion: image.toolkit.fluxcd.io/v1beta2
 kind: ImageUpdateAutomation

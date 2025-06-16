@@ -15,8 +15,7 @@ spec:
   values:
     image:
       repository: delayj/jimdel
-      tag: latest  # {"$imagepolicy": "flux-system:jimdel:tag"}
-      #tag: 1.0.0  # {"$imagepolicy": "flux-system:jimdel:tag"}
+      tag: main-3f7ec9b  # {"$imagepolicy": "flux-system:jimdel:tag"}
     
     ingress:
       enabled: true
