@@ -4,13 +4,13 @@ metadata:
   name: jimdel 
   namespace: flux-system
   annotations:
-    # Add a reconcile annotation to force a refresh
-    reconcile.fluxcd.io/requestedAt: "1750042500"
+    # Add a reconcile annotation to force a refresh with a new timestamp
+    reconcile.fluxcd.io/requestedAt: "1750043000"
 spec:
   image: delayj/jimdel
   interval: 1m
-  # Explicitly disable the signature filtering that might block semver tags
-  exclusionList: []
+  # Explicitly include all tags by setting a non-excluding pattern
+  exclusionList: ["^$"]  # This pattern matches nothing, so no tags are excluded
 ---
 apiVersion: image.toolkit.fluxcd.io/v1beta2
 kind: ImagePolicy
