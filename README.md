@@ -1,7 +1,5 @@
 ## To Do:
-- [ ] Update documentation
-  - [ ] Add diagrams for network setup
-  - [ ] Update `CreatingCI_CDPipeline.md` docs to latest process
+- [ ] Update `CreatingCI_CDPipeline.md` docs to latest process
 - [ ] Add monitoring stack (Prometheus, Grafana)
 - [ ] Set up email alerting for deployments and application health 
 
