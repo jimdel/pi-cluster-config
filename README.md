@@ -135,19 +135,13 @@ traefik.ingress.kubernetes.io/router.tls: "true"
 cert-manager.io/cluster-issuer: "letsencrypt-prod"
 ```
 ## Cloudflare Tunnel
-To expose services securely over the internet, I use Cloudflare Tunnel. This allows me to avoid opening ports on my home network while still providing access to my applications.
-The setup involves creating a tunnel and configuring it to route traffic to the appropriate services in the cluster. For more details, see [Cloudflare Tunnel Setup](docs/CloudflareTunnelSetup.md).
+To expose services securely over the internet, I use a containerized Cloudflare Tunnel running in Kubernetes. This allows me to avoid opening ports on my home network while still providing access to my applications.
+
+The tunnel runs as a Kubernetes deployment managed by Flux, providing high availability and automatic restarts. It routes traffic from Cloudflare's edge to the Traefik ingress controller in the cluster.
+
+For setup instructions, see [Containerized Cloudflare Tunnel Guide](docs/ContainerizedCloudflareTunnel.md).
 
 ## Load Balancer Configuration
 
 K3s clusters come bundled with ServiceLB but this is not suitable for production use. Instead, I decided to use MetalLB to provide a more robust load balancing solution.
-
-### Comparison: ServiceLB vs MetalLB
-| Feature                  | **ServiceLB (K3s default)** | **MetalLB**                           |
-| ------------------------ | --------------------------- | ------------------------------------- |
-| **Bundled with K3s**     | ✅ Yes                       | ❌ No       |
-| **Works out-of-the-box** | ✅ Yes (basic)               | ❌ Requires configuration              |
-| **Supports IP Pools**    | ❌ No (1 IP per node)        | ✅ Yes (flexible IP ranges)            |
-| **Shared IPs (L2 mode)** | ❌ No                        | ✅ Yes (one IP can float across nodes) |
-| **HA Load Balancing**    | ⚠️ Limited (1 IP → 1 Node)  | ✅ True Load Balancer behavior         |
-| **Production Ready**     | ⚠️ Basic use/dev only       | ✅ Widely used in production           |
+For setup instructions, see [MetalLB Setup Guide](docs/MetalLBSetup.md).
