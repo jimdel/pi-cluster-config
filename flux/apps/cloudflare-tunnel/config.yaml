@@ -5,12 +5,12 @@ metadata:
   namespace: cloudflare-tunnel
 data:
   config.yml: |
-    tunnel: YOUR_TUNNEL_ID  # DO NOT EDIT | setup-cloudflare-tunnel.sh
+    tunnel: 8696c5ea-e654-41cd-8e10-ba953b7998d8  # DO NOT EDIT | setup-cloudflare-tunnel.sh
     credentials-file: /etc/cloudflared/creds/credentials.json
     metrics: 0.0.0.0:2000
     ingress:
       # Route for your domain - adjust based on your setup
-      - hostname: "*.yourdomain.com"  # DO NOT EDIT | setup-cloudflare-tunnel.sh
+      - hostname: "*.jimdel.dev"  # DO NOT EDIT | setup-cloudflare-tunnel.sh
         service: https://traefik.kube-system.svc.cluster.local:443 
         originRequest:
           noTLSVerify: true
