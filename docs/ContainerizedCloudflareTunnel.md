@@ -1,21 +1,11 @@
 # Containerized Cloudflare Tunnel Setup
 
-This guide explains how to run Cloudflare Tunnel as a containerized service in your Kubernetes cluster, managed by Flux GitOps.
-
-## Overview
-
-The containerized Cloudflare Tunnel setup provides several advantages over running it directly on the host:
-
-- **High Availability**: Kubernetes will restart the tunnel if it fails
-- **Resource Management**: CPU and memory limits/requests are defined
-- **GitOps Integration**: Managed through your existing Flux setup
-- **Observability**: Health checks and metrics endpoint
-- **Scalability**: Can be easily scaled or moved between nodes
+This guide explains how to run Cloudflare Tunnel as a containerized service.
 
 ## Architecture
 
 ```
-Internet → Cloudflare Edge → Cloudflare Tunnel Pod → Traefik Ingress → Your Apps
+Internet → Cloudflare Edge → Cloudflare Tunnel Pod → Traefik Ingress → Apps
 ```
 
 The tunnel runs as a Kubernetes Deployment with:
@@ -29,7 +19,6 @@ The tunnel runs as a Kubernetes Deployment with:
 1. Existing Cloudflare Tunnel created and configured
 2. Tunnel credentials JSON file
 3. `kubeseal` CLI tool installed
-4. Access to your Kubernetes cluster
 
 ## Setup Instructions
 
@@ -101,12 +90,7 @@ The tunnel runs as a Kubernetes Deployment with:
 
 ## Deployment
 
-1. **Commit changes**:
-   ```bash
-   git add flux/apps/cloudflare-tunnel/
-   git commit -m "Add containerized Cloudflare Tunnel"
-   git push
-   ```
+1. **Commit changes**: Flux will automatically apply the manifests
 
 2. **Monitor deployment**:
    ```bash
@@ -129,7 +113,7 @@ The tunnel runs as a Kubernetes Deployment with:
    ```
 
 2. **Test connectivity**:
-   - Visit your domain in a browser
+   - Visit domain in a browser
    - Traffic should route through the containerized tunnel
 
 3. **Monitor metrics** (optional):
