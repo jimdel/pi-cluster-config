@@ -11,7 +11,7 @@ data:
     metrics: 0.0.0.0:2000
     ingress:
       - hostname: jimdel.dev
-        service: 1.1.1.10:443
+        service: https://1.1.1.10
         originRequest:
           noTLSVerify: true
           connectTimeout: 30s
