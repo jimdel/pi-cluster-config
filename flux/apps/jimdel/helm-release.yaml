@@ -22,3 +22,6 @@ spec:
         traefik.ingress.kubernetes.io/router.entrypoints: websecure
         traefik.ingress.kubernetes.io/router.tls: "true"
         cert-manager.io/cluster-issuer: letsencrypt-prod
+      tls:
+        enabled: true
+        secretName: jimdel-tls
