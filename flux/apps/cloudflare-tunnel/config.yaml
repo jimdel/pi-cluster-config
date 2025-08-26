@@ -7,6 +7,7 @@ data:
   config.yml: |
     tunnel: 8696c5ea-e654-41cd-8e10-ba953b7998d8  # DO NOT EDIT | setup-cloudflare-tunnel.sh
     credentials-file: /etc/cloudflared/creds/credentials.json
+    origincert: /etc/cloudflared/creds/cert.pem
     metrics: 0.0.0.0:2000
     ingress:
       # Route for your domain - adjust based on your setup
